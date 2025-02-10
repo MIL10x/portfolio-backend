@@ -3,6 +3,7 @@ const app = express()
 const mongoosedb = require('mongoose')
 const cors = require('cors')
 const port = process.env.port || 4800
+require('dotenv').config();
 
 mongoosedb.connect(process.env.MONGO_URI).then(()=>console.log("Database connected"))
 app.use(cors())
