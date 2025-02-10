@@ -4,7 +4,7 @@ const mongoosedb = require('mongoose')
 const cors = require('cors')
 const port = process.env.port || 4800
 
-mongoosedb.connect('mongodb+srv://miltonvinciline08:8sj1LNvDVJuKb27g@cluster0.vhd5a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(()=>console.log("Database connected"))
+mongoosedb.connect(process.env.MONGO_URI).then(()=>console.log("Database connected"))
 app.use(cors())
 
 const dataschema = new mongoosedb.Schema({
